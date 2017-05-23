@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+function feedFunction(button) {
+    var oldValue = button.value;
+
+    button.setAttribute('disabled', true);
+    button.value = '...processing...';
+    setTimeout(function(){
+        button.value = oldValue;
+        button.removeAttribute('disabled');
+    }, 3000)
+}
+
+function vidFunction(button) {
+    var frame = document.getElementById("frame1");
+        frame.style="display:yes";
+        frame.width="640"
+        frame.height="480"
+        frame.src="http://198.144.202.216:8081"
+    var oldValue = button.value;
+    
+    if(oldValue == "Show Video") {
+        button.setAttribute('disabled', true);
+        button.value = 'Showing...';
+        
+        setTimeout(function(){
+            button.removeAttribute('disabled');
+	    button.value = 'Disable Video';
+        }, 1000)
+
+    	var frame = document.getElementById("frame1");
+    	frame.style="display:yes";
+    	frame.width="640"
+    	frame.height="480"
+    	frame.src="http://198.144.202.216:8081"
+    }
+    else if(oldValue == "Disable Video") {
+	button.setAttribute('disabled', true);
+        button.value = 'Disabling...';
+
+        setTimeout(function(){
+            button.removeAttribute('disabled');
+	    button.value = 'Show Video';
+        }, 1000)
+    
+        var frame = document.getElementById("frame1");
+        frame.style="display:none";
+        frame.width="0"
+        frame.height="0"
+        frame.src="http://www.google.com"
+    }
+}
+</script> 
+<head>
+    <title>PetBuddy Webapp</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation"><a href="#">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="showSignUp">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">PetBuddy Python Flask App</h3>
+        </div>
+ 
+        <div class="jumbotron">
+            <h1>PetBuddy</h1>
+            <p class="lead"></p>
+            <p><input id="but1" class="btn btn-lg btn-success" value="Feed Pet!" onclick="location.href='feedPet';feedFunction(this)" role="button"></a>
+            <p><input id="but2" class="btn btn-lg btn-success" value="Show Video"onclick="vidFunction(this)" role="button"</a>          
+</p>
+	    
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; PetBUDDY 2016</p>
+        </footer>
+ 
+    </div>
+<iframe id="frame1" name="theFrame" style="display:none" width="0" height="0"></iframe>
+
+</body>
+ 
+</html>
