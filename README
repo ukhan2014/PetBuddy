@@ -6,7 +6,7 @@ Materials:
 1. raspi
    - webapp repo must be cloned on to this
    - network needed, wifi or ethernet or ethernet over usb
-   - 1 usb port for the camera needed
+   - 1 usb port for the camera needed (so for pi zero a usb hub is needed)
 2. network
 3. servo - Futaba S3003 Standard Servo or similar
 4. dollar store plastic jar with screw on lid
@@ -22,3 +22,16 @@ Webapp:
    $ . bin/activate
    $ pip install Flask
 4. 
+
+
+******************************************************************************************
+
+Gotchas:
+
+If you get an error when running the app that looks like this:
+	socket.error: [Errno 98] Address already in use
+then change the port in this line:
+	app.run(host='0.0.0.0', port=8070, debug=True)
+to something that might not be in use.
+
+******************************************************************************************
