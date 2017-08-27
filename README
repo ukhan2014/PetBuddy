@@ -4,9 +4,21 @@ Petbuddy v0 Demo units
 
 Materials:
 1. raspi
+   - webapp repo must be cloned on to this
+   - network needed, wifi or ethernet or ethernet over usb
+   - 1 usb port for the camera needed
 2. network
 3. servo - Futaba S3003 Standard Servo or similar
 4. dollar store plastic jar with screw on lid
 5. cheapo ebay usb webcam
 
 ******************************************************************************************
+
+Webapp:
+1. git clone the repo
+2. from outside the repo directory do:
+   $ virtualenv petbuddy-v0-demo/
+   $ cd petbuddy-v0-demo
+   $ . bin/activate
+   $ pip install Flask
+4. 
