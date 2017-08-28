@@ -22,10 +22,18 @@ Webapp:
    $ . bin/activate
    $ pip install Flask
 4. Need to install RPi.GPIO library
-   - First need python-dev, without it the library will not build properly on osX sierra:
+   - First need python-dev, without it the library will not build properly:
      $ sudo apt-get install python-dev
      $ pip install RPi.GPIO
+     
+******************************************************************************************
 
+Video stream using Raspi cam:
+Some people have made a open source project for this.
+ - Documentation: http://elinux.org/RPi-Cam-Web-Interface
+ - github: https://github.com/silvanmelchior/RPi_Cam_Web_Interface
+
+You can run this server in the background and tie it into the petbuddy system.
 
 ******************************************************************************************
 
