@@ -46,3 +46,9 @@ then change the port in this line:
 to something that might not be in use.
 
 ******************************************************************************************
+Raspi setup:
+On pi zero, the usb wifi dongle gets the wlan0 interface renamed by the kernel driver.
+To fix this, just do: 
+  $ dmesg | grep -i renamed
+And then change all mentions of wlan0 in /etc/interfaces file to whatever the wlan0 was
+renamed to.
